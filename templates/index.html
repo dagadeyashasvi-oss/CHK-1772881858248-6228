@@ -12,7 +12,7 @@
 
 <script>
 (function(){
-emailjs.init("F1Lw3sRiILLlptMjq");
+emailjs.init("YOUR_PUBLIC_KEY");
 })();
 </script>
 
@@ -28,7 +28,7 @@ emailjs.init("F1Lw3sRiILLlptMjq");
 
 <p class="subtitle">ONE DONATION CAN FEED MANY LIVES.</p>
 
-<form action="/submit" method="POST" onsubmit="sendEmail(event)">
+<form action="/submit" method="POST" onsubmit="sendEmail()">
 
 <input type="text" name="event_name" placeholder="Event Name" required>
 
@@ -67,7 +67,7 @@ Donate Food
 
 <script>
 
-/* GPS Location */
+/* GPS location */
 
 function getLocation(){
 
@@ -83,11 +83,9 @@ alert("Location Captured Successfully");
 }
 
 
-/* EmailJS Send Email */
+/* NGO email notification */
 
-function sendEmail(event){
-
-event.preventDefault();
+function sendEmail(){
 
 var params = {
 
@@ -103,17 +101,13 @@ longitude: document.getElementById("lon").value
 
 };
 
-emailjs.send("service_n6xmw8k","template_w8k1xw8",params)
+emailjs.send("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",params)
 
-.then(function(){
+.then(function(response){
 
-alert("Email sent to NGO successfully");
+console.log("Email sent successfully");
 
-document.querySelector("form").submit();
-
-})
-
-.catch(function(error){
+},function(error){
 
 console.log("Email failed",error);
 

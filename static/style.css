@@ -1,163 +1,198 @@
-/* Page Background */
-
 body{
-font-family:'Segoe UI', sans-serif;
+
+font-family:'Segoe UI',sans-serif;
 margin:0;
 padding:0;
 
-background:linear-gradient(135deg,#e8f5e9,#c8e6c9,#a5d6a7);
+/* Food donation background image */
+
+background-image:url("https://images.unsplash.com/photo-1542838132-92c53300491e");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+
+/* dark overlay */
+
+background-color:rgba(0,0,0,0.4);
+background-blend-mode:overlay;
+
 }
 
 
-/* Center Layout */
+/* Center layout */
 
 .main-container{
+
 display:flex;
 justify-content:center;
 align-items:center;
 height:100vh;
+
 }
 
 
-/* Form Card */
+/* Donation Form Card */
 
 .card{
+
 background:white;
 padding:40px;
 border-radius:15px;
 width:420px;
 text-align:center;
-box-shadow:0 12px 30px rgba(0,0,0,0.15);
+
+box-shadow:0 15px 35px rgba(0,0,0,0.4);
+
 }
 
-
-/* Title */
 
 h1{
+
 color:#1b5e20;
 margin-bottom:10px;
+
 }
 
+
 .subtitle{
+
 color:#555;
-font-size:14px;
 margin-bottom:25px;
+
 }
 
 
 /* Inputs */
 
 input{
+
 width:90%;
 padding:12px;
 margin:8px 0;
 border-radius:8px;
 border:1px solid #ccc;
 font-size:14px;
-transition:0.2s;
-}
 
-input:focus{
-outline:none;
-border-color:#2e7d32;
-box-shadow:0 0 5px rgba(46,125,50,0.3);
 }
 
 
 /* Buttons */
 
-button{
-border:none;
-padding:12px;
-border-radius:6px;
-cursor:pointer;
-font-size:14px;
-margin-top:10px;
-transition:0.2s;
+.buttons{
+
+margin-top:15px;
+
 }
 
-
-/* Location Button */
 
 .location-btn{
+
 background:#1976d2;
 color:white;
+border:none;
+padding:10px 15px;
+border-radius:6px;
+cursor:pointer;
+
 }
 
-.location-btn:hover{
-background:#0d47a1;
-}
-
-
-/* Submit Button */
 
 .submit-btn{
+
 background:#2e7d32;
 color:white;
+border:none;
+padding:10px 15px;
+border-radius:6px;
+cursor:pointer;
+
 }
 
-.submit-btn:hover{
-background:#1b5e20;
-transform:scale(1.05);
-}
 
 
 /* NGO Dashboard Table */
 
-.table-container{
-width:90%;
+table{
+
+border-collapse:collapse;
 margin:auto;
 margin-top:60px;
-}
+width:90%;
 
-table{
-border-collapse:collapse;
-width:100%;
-background:white;
+/* glass effect */
+
+background:rgba(255,255,255,0.95);
+
 border-radius:10px;
 overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
+
+box-shadow:0 15px 40px rgba(0,0,0,0.4);
+
 }
+
+
+/* Table header */
 
 th{
-background:#2e7d32;
+
+background:#1b5e20;
 color:white;
-padding:12px;
+padding:14px;
+font-size:15px;
+
 }
+
+
+/* Table rows */
 
 td{
-padding:10px;
+
+padding:12px;
 text-align:center;
-border-bottom:1px solid #eee;
+border-bottom:1px solid #ddd;
+color:#333;
+
 }
+
+
+/* Row hover */
 
 tr:hover{
-background:#f5f5f5;
+
+background:#f1f8e9;
+
 }
 
 
-/* Table Buttons */
+/* Table buttons */
 
 table button{
-padding:6px 12px;
-border-radius:5px;
+
+padding:7px 14px;
+border-radius:6px;
 border:none;
 cursor:pointer;
 font-size:13px;
+
 }
 
 
-/* View Location Button */
+/* View location button */
 
-.location-btn{
+.view-btn{
+
 background:#1976d2;
 color:white;
+
 }
 
 
-/* Pickup Button */
+/* Pickup button */
 
-.pickup-btn{
-background:#c62828;
+.delete-btn{
+
+background:#d32f2f;
 color:white;
+
 }
