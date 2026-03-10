@@ -1,226 +1,163 @@
+/* Page Background */
+
 body{
-
-font-family: 'Segoe UI', sans-serif;
-
+font-family:'Segoe UI', sans-serif;
 margin:0;
 padding:0;
 
-/* Soft professional gradient */
-
 background:linear-gradient(135deg,#e8f5e9,#c8e6c9,#a5d6a7);
-
 }
 
-/* Center layout */
+
+/* Center Layout */
 
 .main-container{
-
 display:flex;
 justify-content:center;
 align-items:center;
 height:100vh;
-
 }
+
 
 /* Form Card */
 
 .card{
-
 background:white;
-
 padding:40px;
-
 border-radius:15px;
-
 width:420px;
-
 text-align:center;
-
 box-shadow:0 12px 30px rgba(0,0,0,0.15);
-
 }
+
 
 /* Title */
 
 h1{
-
 color:#1b5e20;
 margin-bottom:10px;
-
 }
 
 .subtitle{
-
 color:#555;
 font-size:14px;
 margin-bottom:25px;
-
 }
+
 
 /* Inputs */
 
 input{
-
 width:90%;
-
 padding:12px;
-
 margin:8px 0;
-
 border-radius:8px;
-
 border:1px solid #ccc;
-
 font-size:14px;
-
 transition:0.2s;
-
 }
 
 input:focus{
-
 outline:none;
-
 border-color:#2e7d32;
-
 box-shadow:0 0 5px rgba(46,125,50,0.3);
-
 }
+
 
 /* Buttons */
 
 button{
-
 border:none;
-
 padding:12px;
-
 border-radius:6px;
-
 cursor:pointer;
-
 font-size:14px;
-
 margin-top:10px;
-
 transition:0.2s;
-
 }
 
-/* Location button */
+
+/* Location Button */
 
 .location-btn{
-
 background:#1976d2;
-
 color:white;
-
 }
 
 .location-btn:hover{
-
 background:#0d47a1;
-
 }
 
-/* Submit button */
+
+/* Submit Button */
 
 .submit-btn{
-
 background:#2e7d32;
-
 color:white;
-
 }
 
 .submit-btn:hover{
-
 background:#1b5e20;
-
 transform:scale(1.05);
-
 }
 
-/* NGO Table */
+
+/* NGO Dashboard Table */
+
+.table-container{
+width:90%;
+margin:auto;
+margin-top:60px;
+}
 
 table{
-
 border-collapse:collapse;
-
-margin:auto;
-
-margin-top:60px;
-
-width:90%;
-
+width:100%;
 background:white;
-
 border-radius:10px;
-
 overflow:hidden;
-
 box-shadow:0 10px 25px rgba(0,0,0,0.2);
-
 }
 
 th{
-
 background:#2e7d32;
-
 color:white;
-
 padding:12px;
-
 }
 
 td{
-
 padding:10px;
-
 text-align:center;
-
 border-bottom:1px solid #eee;
-
 }
 
 tr:hover{
-
 background:#f5f5f5;
-
 }
 
-/* Table buttons */
+
+/* Table Buttons */
 
 table button{
-
 padding:6px 12px;
-
 border-radius:5px;
-
 border:none;
-
 cursor:pointer;
-
 font-size:13px;
-
 }
 
-/* View location */
 
-.view-btn{
+/* View Location Button */
 
+.location-btn{
 background:#1976d2;
-
 color:white;
-
 }
 
-/* Pickup */
 
-.delete-btn{
+/* Pickup Button */
 
+.pickup-btn{
 background:#c62828;
-
 color:white;
-
 }

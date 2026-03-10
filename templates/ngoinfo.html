@@ -3,7 +3,7 @@
 
 <head>
 
-<title>NGO Dashboard</title>
+<title>NGO Dashboard - FoodLink AI</title>
 
 <link rel="stylesheet" href="/static/style.css">
 
@@ -15,10 +15,11 @@
 Available Food Donations
 </h1>
 
+<div class="table-container">
+
 <table>
 
 <tr>
-
 <th>Event</th>
 <th>City</th>
 <th>Place</th>
@@ -28,39 +29,30 @@ Available Food Donations
 <th>Expiry</th>
 <th>Location</th>
 <th>Pickup</th>
-
 </tr>
 
 {% for row in data %}
 
 <tr>
 
-<td>{{row[1]}}</td>
-<td>{{row[2]}}</td>
-<td>{{row[3]}}</td>
-<td>{{row[4]}}</td>
-<td>{{row[5]}}</td>
-<td>{{row[6]}}</td>
-<td>{{row[7]}}</td>
+<td>{{ row[1] }}</td>
+<td>{{ row[2] }}</td>
+<td>{{ row[3] }}</td>
+<td>{{ row[4] }}</td>
+<td>{{ row[5] }}</td>
+<td>{{ row[6] }}</td>
+<td>{{ row[7] }}</td>
 
 <td>
-
 <a href="https://www.google.com/maps?q={{row[8]}},{{row[9]}}" target="_blank">
-
-<button>View Location</button>
-
+<button class="location-btn">View Location</button>
 </a>
-
 </td>
 
 <td>
-
 <a href="/delete/{{row[0]}}">
-
-<button style="background:red;">Pickup</button>
-
+<button class="pickup-btn">Pickup</button>
 </a>
-
 </td>
 
 </tr>
@@ -68,6 +60,8 @@ Available Food Donations
 {% endfor %}
 
 </table>
+
+</div>
 
 </body>
 

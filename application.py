@@ -1,14 +1,19 @@
-from flask import Flask,render_template,request,redirect
+# FoodLink AI Flask Backend
+
+from flask import Flask, render_template, request, redirect
 import sqlite3
 
 app = Flask(__name__)
 
+
+# Home Page (Donor Form)
 @app.route("/")
 def home():
     return render_template("index.html")
 
 
-@app.route("/submit",methods=["POST"])
+# Form Submit
+@app.route("/submit", methods=["POST"])
 def submit():
 
     event_name = request.form["event_name"]
@@ -25,9 +30,10 @@ def submit():
     cur = conn.cursor()
 
     cur.execute("""
-    INSERT INTO food(event_name,city,event_place,contact,food_type,quantity,expiry,latitude,longitude)
-    VALUES(?,?,?,?,?,?,?,?,?)
-    """,(event_name,city,event_place,contact,food_type,quantity,expiry,latitude,longitude))
+    INSERT INTO food
+    (event_name, city, event_place, contact, food_type, quantity, expiry, latitude, longitude)
+    VALUES (?,?,?,?,?,?,?,?,?)
+    """, (event_name, city, event_place, contact, food_type, quantity, expiry, latitude, longitude))
 
     conn.commit()
     conn.close()
@@ -35,6 +41,7 @@ def submit():
     return redirect("/ngo")
 
 
+# NGO Dashboard
 @app.route("/ngo")
 def ngo():
 
@@ -46,10 +53,10 @@ def ngo():
 
     conn.close()
 
-    return render_template("ngoinfo.html",data=data)
+    return render_template("ngoinfo.html", data=data)
 
 
-# 🔴 NEW DELETE ROUTE
+# Delete after pickup
 @app.route("/delete/<int:id>")
 def delete(id):
 
@@ -64,4 +71,6 @@ def delete(id):
     return redirect("/ngo")
 
 
-app.run(debug=True)
+# Run Server
+if __name__ == "__main__":
+    app.run(debug=True)
