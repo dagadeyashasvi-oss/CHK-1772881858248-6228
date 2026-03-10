@@ -4,13 +4,16 @@
 <head>
 
 <title>NGO Dashboard</title>
+
 <link rel="stylesheet" href="/static/style.css">
 
 </head>
 
 <body>
 
-<h1>Available Food</h1>
+<h1 style="text-align:center;color:white;margin-top:40px;">
+Available Food Donations
+</h1>
 
 <table>
 
@@ -23,7 +26,8 @@
 <th>Food</th>
 <th>Quantity</th>
 <th>Expiry</th>
-<th>Map</th>
+<th>Location</th>
+<th>Pickup</th>
 
 </tr>
 
@@ -41,10 +45,19 @@
 
 <td>
 
-<a target="_blank"
-href="https://www.google.com/maps?q={{row[8]}},{{row[9]}}">
+<a href="https://www.google.com/maps?q={{row[8]}},{{row[9]}}" target="_blank">
 
-View Location
+<button>View Location</button>
+
+</a>
+
+</td>
+
+<td>
+
+<a href="/delete/{{row[0]}}">
+
+<button style="background:red;">Pickup</button>
 
 </a>
 
@@ -57,4 +70,5 @@ View Location
 </table>
 
 </body>
+
 </html>

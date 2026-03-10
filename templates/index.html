@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<title>Food Donation Form</title>
+<title>FoodLink AI</title>
+
 <link rel="stylesheet" href="/static/style.css">
 
 </head>
 
 <body>
 
-<div class="container">
+<div class="main-container">
+
+<div class="card">
 
 <h1>Food Donation Form</h1>
+
+<p class="subtitle">ONE  DONATION  CAN  FEED  MANY  LIVES.</p>
 
 <form action="/submit" method="POST">
 
@@ -25,22 +31,28 @@
 
 <input type="text" name="food_type" placeholder="Food Type" required>
 
-<input type="text" name="quantity" placeholder="Quantity" required>
+<input type="text" name="quantity" placeholder="Quantity (plates)" required>
 
-<input type="text" name="expiry" placeholder="Food Expiry Time" required>
+<input type="text" name="expiry" placeholder="Food Expiry (hours)" required>
 
 <input type="hidden" name="latitude" id="lat">
 <input type="hidden" name="longitude" id="lon">
 
-<br>
+<div class="buttons">
 
-<button type="button" onclick="getLocation()">Get Live Location</button>
+<button type="button" class="location-btn" onclick="getLocation()">
+📍 Get Live Location
+</button>
 
-<br><br>
+<button type="submit" class="submit-btn">
+Donate Food
+</button>
 
-<button type="submit">Submit</button>
+</div>
 
 </form>
+
+</div>
 
 </div>
 
@@ -53,7 +65,7 @@ navigator.geolocation.getCurrentPosition(function(position){
 document.getElementById("lat").value = position.coords.latitude;
 document.getElementById("lon").value = position.coords.longitude;
 
-alert("Location captured!");
+alert("Location Captured Successfully");
 
 });
 
