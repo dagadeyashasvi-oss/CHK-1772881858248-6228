@@ -1,36 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>FoodLink AI</title>
+
+<title>Food Donation Form</title>
+<link rel="stylesheet" href="/static/style.css">
+
 </head>
 
 <body>
 
-<h2>Food Donation Form</h2>
+<div class="container">
+
+<h1>Food Donation Form</h1>
 
 <form action="/submit" method="POST">
 
-Event Place Name
-<input type="text" name="event_place"><br><br>
+<input type="text" name="event_name" placeholder="Event Name" required>
 
-Location
-<input type="text" name="location"><br><br>
+<input type="text" name="city" placeholder="City" required>
 
-City
-<input type="text" name="city"><br><br>
+<input type="text" name="event_place" placeholder="Event Place" required>
 
-Food Type
-<input type="text" name="food"><br><br>
+<input type="text" name="contact" placeholder="Contact Number" required>
 
-Quantity
-<input type="text" name="quantity"><br><br>
+<input type="text" name="food_type" placeholder="Food Type" required>
 
-Spoilage Time
-<input type="text" name="spoilage"><br><br>
+<input type="text" name="quantity" placeholder="Quantity" required>
+
+<input type="text" name="expiry" placeholder="Food Expiry Time" required>
+
+<input type="hidden" name="latitude" id="lat">
+<input type="hidden" name="longitude" id="lon">
+
+<br>
+
+<button type="button" onclick="getLocation()">Get Live Location</button>
+
+<br><br>
 
 <button type="submit">Submit</button>
 
 </form>
+
+</div>
+
+<script>
+
+function getLocation(){
+
+navigator.geolocation.getCurrentPosition(function(position){
+
+document.getElementById("lat").value = position.coords.latitude;
+document.getElementById("lon").value = position.coords.longitude;
+
+alert("Location captured!");
+
+});
+
+}
+
+</script>
 
 </body>
 </html>
